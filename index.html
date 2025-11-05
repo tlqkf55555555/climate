@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에코중독자들 (Ecoholics)</title>
+  <style>
+    /* 기본 세팅 */
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans KR', sans-serif; color: #333; overflow-x: hidden; }
+
+    /* 색상 테마 */
+    :root {
+      --green: #4CAF50;
+      --sky: #03A9F4;
+      --light-yellow: #CDDC39;
+      --bg: #f5fff6;
+    }
+
+    /* 전체 레이아웃 */
+    section {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    /* 헤더 */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+    header h1 {
+      color: var(--green);
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+    nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #444;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--green);
+    }
+
+    /* Hero 섹션 */
+    #home {
+      background: linear-gradient(135deg, var(--green), var(--sky));
+      color: white;
+    }
+    #home h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+    #home p {
+      font-size: 1.2em;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    #home button {
+      background: white;
+      color: var(--green);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    #home button:hover {
+      background: var(--light-yellow);
+      color: #333;
+    }
+
+    /* 활동 섹션 */
+    #activities {
+      background: var(--bg);
+    }
+    #activities h2 {
+      font-size: 2.5em;
+      color: var(--green);
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1000px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 25px;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); }
+    .card h3 { color: var(--sky); margin-bottom: 10px; }
+    .card p { font-size: 0.95em; line-height: 1.5; }
+
+    /* 슬로건 섹션 */
+    #slogan {
+      background: linear-gradient(135deg, var(--sky), var(--light-yellow));
+      color: #fff;
+    }
+    #slogan h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    #slogan p {
+      font-size: 1.2em;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* 푸터 */
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9em;
+    }
+    footer span {
+      color: var(--light-yellow);
+    }
+
+    /* 간단한 애니메이션 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>에코중독자들 🌱</h1>
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#activities">활동</a>
+      <a href="#slogan">슬로건</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>지구 없인 못 살아</h2>
+    <p>우린 단순히 환경을 '좋아하는' 게 아니에요.  
+      우리는 <strong>환경에 중독된 청소년들</strong>이에요.  
+      함께 지구를 위한 플라스틱 다이어트 챌린지에 참여하세요.</p>
+    <button onclick="scrollToSection('activities')">우리의 활동 보기</button>
+  </section>
+
+  <section id="activities">
+    <h2>🌏 플라스틱 다이어트 챌린지</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>텀블러 데이</h3>
+        <p>학교 매점과 함께 일회용컵 대신 텀블러 사용을 장려해요.</p>
+      </div>
+      <div class="card">
+        <h3>제로웨이스트 키트</h3>
+        <p>비누, 수세미, 가방 등을 직접 만들어 플라스틱 쓰레기를 줄여요.</p>
+      </div>
+      <div class="card">
+        <h3>에코중독자 할인</h3>
+        <p>지역 카페와 협약해 텀블러 이용자에게 특별한 혜택을 제공해요.</p>
+      </div>
+      <div class="card">
+        <h3>#플라스틱다이어트챌린지</h3>
+        <p>SNS에서 챌린지를 인증하고, 전 세계 에코중독자들과 연결돼요!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="slogan">
+    <h2>“지구 없인 못 살아.”</h2>
+    <p>우리의 중독은 해롭지 않아요.  
+    오히려 세상을 살리는 가장 멋진 중독이죠.  
+    당신도 이제 <strong>에코중독자</strong>가 되어보세요.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Ecoholics Foundation. All rights reserved.<br>
+    이 홈페이지의 소유권은 <span>배은서</span>에게 있습니다.</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
